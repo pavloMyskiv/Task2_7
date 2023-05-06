@@ -1,0 +1,206 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eaeaea;
+  color: #333333;
+  font-family: Arial;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1100px;
+  min-height: 100vh;
+}
+
+header {
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  border-bottom: 2px solid #808080;
+}
+header h1 {
+  font-size: 34px;
+}
+header button {
+  padding: 5px;
+  width: 150px;
+  color: inherit;
+  font-weight: 600;
+  vertical-align: middle;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  background-color: inherit;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+header button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px #808080;
+}
+header button::before {
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/dark_mode.svg);
+}
+
+.form {
+  margin: 5px;
+  padding: 15px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  border-radius: 5px;
+  border: 2px solid #808080;
+}
+.form form {
+  position: relative;
+}
+.form form button {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(../img/search.svg);
+  cursor: pointer;
+}
+.form form input {
+  padding-left: 25px;
+  width: 250px;
+  font-size: 18px;
+  height: 2.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #808080;
+}
+.form .select {
+  width: 250px;
+  height: 2.5rem;
+}
+
+.country_cards {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.country_cards .country_card {
+  overflow: hidden;
+  margin: 10px;
+  width: 250px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #808080;
+}
+.country_cards .country_card .country_flag {
+  width: 100%;
+  height: 120px;
+  flex: 1 1 auto;
+  text-align: center;
+}
+.country_cards .country_card .country_flag img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.country_cards .country_card .country_text {
+  padding: 5px;
+}
+.country_cards .country_card .country_text h2 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+.country_cards .country_card .country_text p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.country_cards .country_card .country_text span {
+  font-weight: normal;
+}
+
+.dark_mode {
+  color: #eaeaea;
+  background-color: #333333;
+}
+.dark_mode .mode_button::before {
+  background-image: url(../img/white_mode.svg);
+}
+
+.select {
+  position: relative;
+}
+.select .select_header {
+  display: flex;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333333;
+  border-radius: 5px;
+  border: 2px solid #808080;
+  box-shadow: 0px 0px 5px #808080;
+}
+.select .select_header .select_current {
+  padding: 8px;
+  font-size: 18px;
+  line-height: 24px;
+}
+.select .select_header .select_icon {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/arrow_down.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 45%;
+}
+.select .select_body {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120%;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333333;
+  border: 2px solid #808080;
+}
+.select .select_body .select_item {
+  padding: 8px;
+  font-size: 16px;
+  list-style: 24px;
+  cursor: pointer;
+}
+.select .select_body .select_item:hover {
+  background-color: #ccc;
+}
+
+.is_active .select_body {
+  display: block;
+}

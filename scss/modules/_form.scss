@@ -1,0 +1,39 @@
+.form {
+  margin: 5px;
+  padding: 15px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  border-radius: 5px;
+  border: $border_default;
+  form {
+    position: relative;
+    button {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      border-radius: 5px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-image: url(../img/search.svg);
+      cursor: pointer;
+    }
+    input {
+      padding-left: 25px;
+      width: 250px;
+      font-size: 18px;
+      height: 2.5rem;
+      border-radius: 5px;
+      box-shadow: $shadow_default;
+    }
+  }
+  .select {
+    width: 250px;
+    height: 2.5rem;
+  }
+}
