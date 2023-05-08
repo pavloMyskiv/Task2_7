@@ -8,8 +8,8 @@
 }
 
 body {
-  background-color: #eaeaea;
-  color: #333333;
+  background-color: var(--main-background);
+  color: var(--main-color);
   font-family: Arial;
 }
 
@@ -58,16 +58,22 @@ header button::before {
   background-repeat: no-repeat;
   background-image: url(../img/dark_mode.svg);
 }
+header .dark_mode::before {
+  background-image: url(../img/white_mode.svg);
+}
 
 .form {
   margin: 5px;
   padding: 15px 10px;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
   border-radius: 5px;
   border: 2px solid #808080;
+  background-color: var(--main-background);
 }
 .form form {
   position: relative;
@@ -134,7 +140,7 @@ header button::before {
 }
 .country_cards .country_card .country_text h2 {
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 24px;
 }
 .country_cards .country_card .country_text p {
   margin: 5px 0;
@@ -143,14 +149,6 @@ header button::before {
 }
 .country_cards .country_card .country_text span {
   font-weight: normal;
-}
-
-.dark_mode {
-  color: #eaeaea;
-  background-color: #333333;
-}
-.dark_mode .mode_button::before {
-  background-image: url(../img/white_mode.svg);
 }
 
 .select {
@@ -203,4 +201,9 @@ header button::before {
 
 .is_active .select_body {
   display: block;
+}
+
+:root {
+  --main-color:#333333;
+  --main-background:#eaeaea;
 }

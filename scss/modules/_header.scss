@@ -36,4 +36,9 @@ header {
       background-image: url(../img/dark_mode.svg);
     }
   }
+  .dark_mode {
+    &::before {
+      background-image: url(../img/white_mode.svg);
+    }
+  }
 }

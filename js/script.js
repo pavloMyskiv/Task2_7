@@ -7,22 +7,28 @@ const form = document.querySelector('form');
 const inputCountry = document.querySelector('#name');
 const regions = document.querySelector('.regions');
 
-async function renderCards(filter) {
-  const countries = await getData(filter);
-  renderCountryCard(countries);
-}
+let countries = [];
 
 modeSwitcher();
 select();
-
-renderCards('all');
+getCountries();
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const request = `${inputCountry.id}/${inputCountry.value}`;
-  renderCards(request);
+  let filteredCountries = countries.filter(
+    (country) => inputCountry.value == country.name.common
+  );
+  renderCountryCard(filteredCountries);
 });
+
 regions.addEventListener('click', (event) => {
-  const request = `${regions.id}/${event.target.id}`;
-  renderCards(request);
+  let filteredCountries = countries.filter(
+    (country) => event.target.innerText == country.region
+  );
+  renderCountryCard(filteredCountries);
 });
+
+async function getCountries() {
+  countries = await getData();
+  renderCountryCard(countries);
+}
