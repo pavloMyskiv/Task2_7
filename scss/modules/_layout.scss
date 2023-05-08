@@ -9,8 +9,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #eaeaea;
-  color: #333333;
+  background-color: var(--main-background);
+  color: var(--main-color);
   font-family: Arial;
 }
 

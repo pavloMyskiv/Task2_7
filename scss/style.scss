@@ -3,5 +3,9 @@
 @import './modules/header';
 @import './modules/form';
 @import './modules/country_cards';
-@import './modules/dark_mode';
 @import './modules/select';
+
+:root {
+  --main-background: #eaeaea;
+  --main-color: #333333;
+}

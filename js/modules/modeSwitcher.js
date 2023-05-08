@@ -1,14 +1,23 @@
 export const modeSwitcher = () => {
   const modeButton = document.querySelector('.mode_button');
-  const body = document.querySelector('body');
 
   const switchMode = (flag) => {
     if (flag) {
-      body.classList.remove('dark_mode');
+      modeButton.classList.remove('dark_mode');
+      document.documentElement.style.setProperty(
+        '--main-background',
+        '#eaeaea'
+      );
+      document.documentElement.style.setProperty('--main-color', '#333333');
       localStorage.setItem('dark_mode', 'disactive');
       modeButton.textContent = 'Dark mode';
     } else {
-      body.classList.add('dark_mode');
+      modeButton.classList.add('dark_mode');
+      document.documentElement.style.setProperty(
+        '--main-background',
+        '#333333'
+      );
+      document.documentElement.style.setProperty('--main-color', '#eaeaea');
       localStorage.setItem('dark_mode', 'active');
       modeButton.textContent = 'White mode';
     }
@@ -17,6 +26,6 @@ export const modeSwitcher = () => {
   switchMode(localStorage.getItem('dark_mode') != 'active');
 
   modeButton.addEventListener('click', () => {
-    switchMode(body.classList.contains('dark_mode'));
+    switchMode(modeButton.classList.contains('dark_mode'));
   });
 };

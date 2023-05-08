@@ -8,8 +8,8 @@
 }
 
 body {
-  background-color: #eaeaea;
-  color: #333333;
+  background-color: var(--main-background);
+  color: var(--main-color);
   font-family: Arial;
 }
 
@@ -30,7 +30,7 @@ header {
 header h1 {
   font-size: 34px;
 }
-header button {
+header .mode_button {
   padding: 5px;
   width: 150px;
   color: inherit;
@@ -42,11 +42,11 @@ header button {
   transition: all 0.5s;
   cursor: pointer;
 }
-header button:hover {
+header .mode_button:hover {
   transform: scale(1.05);
   box-shadow: 0px 0px 5px #808080;
 }
-header button::before {
+header .mode_button::before {
   content: "";
   display: inline-block;
   margin-right: 10px;
@@ -57,6 +57,9 @@ header button::before {
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../img/dark_mode.svg);
+}
+header .dark_mode::before {
+  background-image: url(../img/white_mode.svg);
 }
 
 .form {
@@ -71,6 +74,7 @@ header button::before {
 }
 .form form {
   position: relative;
+  margin: 5px;
 }
 .form form button {
   position: absolute;
@@ -95,6 +99,7 @@ header button::before {
   box-shadow: 0px 0px 5px #808080;
 }
 .form .select {
+  margin: 5px;
   width: 250px;
   height: 2.5rem;
 }
@@ -143,14 +148,6 @@ header button::before {
 }
 .country_cards .country_card .country_text span {
   font-weight: normal;
-}
-
-.dark_mode {
-  color: #eaeaea;
-  background-color: #333333;
-}
-.dark_mode .mode_button::before {
-  background-image: url(../img/white_mode.svg);
 }
 
 .select {
@@ -203,4 +200,9 @@ header button::before {
 
 .is_active .select_body {
   display: block;
+}
+
+:root {
+  --main-background: #eaeaea;
+  --main-color: #333333;
 }

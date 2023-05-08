@@ -16,9 +16,7 @@ const getCounryHTML = (country) => {
 };
 
 export const renderCountryCard = (countries) => {
-  let resultHTML = ``;
-  countries.forEach((country) => {
-    resultHTML = resultHTML + getCounryHTML(country);
-  });
+  let resultHTML = countries.map((country) => getCounryHTML(country)).join('');
+
   contryCards.innerHTML = resultHTML;
 };

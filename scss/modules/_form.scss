@@ -9,6 +9,7 @@
   border: $border_default;
   form {
     position: relative;
+    margin: 5px;
     button {
       position: absolute;
       display: block;
@@ -33,6 +34,7 @@
     }
   }
   .select {
+    margin: 5px;
     width: 250px;
     height: 2.5rem;
   }
