@@ -1,0 +1,9 @@
+.dark_mode {
+  --main-color: #eaeaea;
+  --main-background: #333333;
+  .mode_button {
+    &::before {
+      background-image: url(../img/white_mode.svg);
+    }
+  }
+}

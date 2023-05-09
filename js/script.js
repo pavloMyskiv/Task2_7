@@ -1,3 +1,5 @@
+/** @format */
+
 import { modeSwitcher } from './modules/modeSwitcher.js';
 import { select } from './modules/select.js';
 import { renderCountryCard } from './modules/renderCards.js';
@@ -18,13 +20,18 @@ form.addEventListener('submit', (event) => {
   let filteredCountries = countries.filter(
     (country) => inputCountry.value == country.name.common
   );
-  renderCountryCard(filteredCountries);
+  if (filteredCountries.length != 0) {
+    renderCountryCard(filteredCountries);
+  } else {
+    renderCountryCard(countries);
+  }
 });
 
 regions.addEventListener('click', (event) => {
   let filteredCountries = countries.filter(
     (country) => event.target.innerText == country.region
   );
+
   renderCountryCard(filteredCountries);
 });
 

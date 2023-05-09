@@ -58,9 +58,6 @@ header button::before {
   background-repeat: no-repeat;
   background-image: url(../img/dark_mode.svg);
 }
-header .dark_mode::before {
-  background-image: url(../img/white_mode.svg);
-}
 
 .form {
   margin: 5px;
@@ -201,6 +198,14 @@ header .dark_mode::before {
 
 .is_active .select_body {
   display: block;
+}
+
+.dark_mode {
+  --main-color: #eaeaea;
+  --main-background: #333333;
+}
+.dark_mode .mode_button::before {
+  background-image: url(../img/white_mode.svg);
 }
 
 :root {
