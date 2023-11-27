@@ -1,0 +1,13 @@
+@import './modules/variables';
+@import './modules/layout';
+@import './modules/header';
+@import './modules/form';
+@import './modules/country_cards';
+@import './modules/select';
+@import './modules/darkMode';
+
+
+:root{
+    --main-color:#333333;
+    --main-background:#eaeaea;
+}
